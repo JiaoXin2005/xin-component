@@ -1,0 +1,161 @@
+// mixins for clearfix
+// ------------------------
+@mixin clearfix() {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+
+// 单行文本截断
+@mixin ellipsis() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// 双行文本截断
+@mixin ellipsis-2() {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-overflow: -o-ellipsis-lastline;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+// 纯中文/纯英文 双行截断： 原理覆盖
+@mixin pure-ellipsis-2 ($fSize: 14px, $bgColor: white) {
+  display: block;
+  // display: inline-block;
+  position: relative;
+  overflow: hidden;
+  font-size: $fSize;
+  text-align: justify;
+  &::before {
+    content: '...';
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    width: $fSize;
+    // width: $fSize * 1.5;
+    // height: $fSize;
+    // line-height: $fSize/2;
+    // display: block;
+    padding-left: 3px;
+    box-sizing: border-box;
+    background-color: $bgColor;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: $bgColor;
+  }
+}
+// 原理依然是覆盖
+@mixin ellipsis-2-new () {
+  // 缺点同上 依然是使用遮盖的方式，会导致部分文字被遮住。。
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+  &::before {
+    content: '';
+    float: left;
+    // need width to stand, just for exist
+    width: 1px;
+    height: 40px;
+  }
+  .text {
+    float: right;
+    // because float right, negative margin left means pull it to right
+    // when content is over 2 line, ::after will float below the ::before
+    // and be pulled into the text box
+    margin-left: -5px;
+    width: 100%;
+    word-break: break-all;
+  }
+  &::after {
+    content: '...';
+    float: right;
+    position: relative;
+    // relative to the parent div
+    // when content is short '...' is always out the parent div
+    // when content is over 2 line '...' is position on the right bottom of the parent div
+    left: 100%;
+    top: -20px;
+    width: 1em;
+    height: 20px;
+    line-height: 20px;
+    // pull the text box, so the ::after enter the text box
+    margin-left: -1em;
+    padding-right: 5px;
+    background-color: white;
+    // box-sizing:border-box will change the relative effect!! so use initial
+    box-sizing: initial;
+  }
+}
+
+@mixin btn-primary ($color: $orange-1) {
+  // font-size: 14px;
+  // padding: 3px 34px;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  overflow: visible;
+  background-color: #F86442;
+  background-image: linear-gradient(90deg, #FF9973 1%, #FF7251 99%);
+  // border: 2px solid #F86442;
+  &:hover {
+    background-image: linear-gradient(90deg, #FFA381 1%, #FF8063 99%);
+  }
+  // &:hover,
+  // &:focus {
+  //   transform: translateY(-1px);
+  //   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+  // }
+  // &:active {
+  //   transform: translateY(0);
+  //   box-shadow: none;
+  // }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    background-color: #ccc;
+    background-image: none;
+    border-color: #cacaca;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+// 专辑tag 如：完本
+@mixin album-tag ($color: $green-1) {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.42;
+  /* height: 17px; */
+  padding: 0 5px;
+  background-color: $color;
+  color: #fff;
+  margin-right: 5px;
+  border-radius: 1px;
+  vertical-align: bottom;
+  user-select: none;
+}

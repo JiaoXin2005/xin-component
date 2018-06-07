@@ -1,0 +1,39 @@
+/* 箭头 上下左右*/ 
+/*
+DOM: <span className='arrow arrow-bottom' />
+*/
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  width: 7px;
+  height: 7px;
+  border: 2px solid $gray-9;
+  transform: rotate(45deg);
+  ::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+  }
+  &#{&}-top {
+    border-right: 0;
+    border-bottom: 0;;
+  }
+  &#{&}-right {
+    border-left: 0;
+    border-bottom: 0;;
+  }
+  &#{&}-bottom {
+    border-top: 0;
+    border-left: 0;
+  }
+  &#{&}-left {
+    border-top: 0;
+    border-right: 0;
+  }
+}

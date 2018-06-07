@@ -1,0 +1,32 @@
+.input-radio {
+  display: inline-block;
+  input[type='radio'] {
+    display: none;
+  }
+  input+i:before {
+    cursor: pointer;
+    padding-right: 5px;
+
+  }
+  input[type='radio'] + i:before {
+    content: '\e6ba';
+    color: #E8E8E8;
+
+  }
+  input[type='radio']:checked + i:before {
+    content: '\e6b9';
+    color: #F86442;
+  }
+}
+
+
+
+
+textarea {
+  resize: none;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 8px;
+  width: 100%;
+  padding: 5px;
+}

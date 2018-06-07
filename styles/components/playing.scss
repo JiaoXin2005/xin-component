@@ -1,0 +1,41 @@
+/*  
+*播放中动画。始于专辑详情页 
+*DOM: <div className='xui-playing'><i />&nbsp;<i />&nbsp;<i />&nbsp;<i /></div>
+*/
+$playing-prefix-cls: 'xui-playing';
+.#{$playing-prefix-cls} {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: justify;
+  font-size: 0;
+  width: 20px;
+  height: 16px;
+  &::after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height:0; overflow:hidden;
+  }
+  i {
+    display: inline-block;
+    width: 2px;
+    height: 16px;
+    border-radius: 6px;
+    background: $orange-1;
+    animation: is-playing .5s ease infinite alternate;
+    transform-origin: bottom;
+    @for $i from 1 through 4 {
+     &:nth-child(#{$i}) {
+       animation-delay: $i * 0.15s
+     } 
+    }
+  }
+}
+@keyframes is-playing {
+  0%{
+    transform: scaleY(0.2)
+  }
+  100% {
+    transform: scaleY(1)    
+  }
+}

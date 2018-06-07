@@ -1,0 +1,243 @@
+// author: lwx
+// create: 2018/1/8 - 20:14
+// my common sass snippets
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: -o-ellipsis-lastline;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+/*  布局类 */
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.inl-b {
+  display: inline-block
+}
+
+.hidden {
+  display: none
+}
+
+.t-c {
+  text-align: center;
+}
+
+.t-l {
+  text-align: left;
+}
+
+.v-m {
+  vertical-align: middle
+}
+
+.pos-r {
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.rich-text {
+  //color: blue;
+  a {
+    font-size: 14px;
+    color: #3267D6;
+    letter-spacing: 0.17px;
+  }
+}
+
+/*尺寸类*/
+.p-t-10 {
+  padding-top: 10px;
+}
+
+.p-b-10 {
+  padding-bottom: 10px;
+}
+
+.p-r-10 {
+  padding-right: 10px;
+}
+
+.p-l-10 {
+  padding-left: 10px;
+
+}
+
+.p-t-15 {
+  padding-top: 15px;
+}
+
+.p-b-15 {
+  padding-bottom: 15px;
+}
+
+.p-l-15 {
+  padding-left: 15px;
+}
+
+.p-r-15 {
+  padding-right: 15px;
+}
+
+.p-l-20 {
+  padding-left: 20px;
+}
+
+.p-r-20 {
+  padding-right: 20px;
+}
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-b-20 {
+  padding-bottom: 20px;
+}
+
+.p-l-30 {
+  padding-left: 30px;
+}
+
+.p-r-30 {
+  padding-right: 30px;
+}
+
+.b-b-e8 {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+/* 颜色 */
+.orange-1 {
+  color: #F86442;
+}
+
+// 主站橙色主色调
+.gray-e8 {
+  color: #e8e8e8;
+}
+
+.gray-9 {
+  color: #999;
+}
+
+.warn-1 {
+  color: #F43530;
+}
+
+.gray-c {
+  color: #cccccc;
+}
+
+.gray-6 {
+  color: #666666;
+}
+
+.gray-3 {
+  color: #333333;
+}
+
+.black {
+  color: #000;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.pointer-orange:hover {
+  color: #F86442 !important;
+  cursor: pointer;
+  i, div {
+    color: #F86442 !important;
+  }
+  //color: #f86442!important;
+}
+
+.pointer-not-allowed:hover {
+  cursor: not-allowed;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+/* 字体 */
+.text-sm {
+  font-size: 12px;
+}
+
+.text-mid {
+  font-size: 14px;
+}
+
+.text-lg {
+  font-size: 16px;
+}
+.text-xl {
+  font-size: 18px;
+}
+
+/* margin 边距 */
+.mgtb-20 {
+  margin: 20px 0;
+}
+
+.mgb-20 {
+  margin-bottom: 20px;
+}
+
+.mgl-5 {
+  margin-left: 5px;
+}
+
+.mgl-10 {
+  margin-left: 10px;
+}
+
+.mgl-20 {
+  margin-left: 20px;
+}
+
+.mgt-10 {
+  margin-top: 10px;
+}
+
+.mgt-15 {
+  margin-top: 15px;
+}
+
+.mgt-20 {
+  margin-top: 20px;
+}
+
+.mgr-5 {
+  margin-right: 5px;
+}
+
+.mgr-20 {
+  margin-right: 20px;
+}

@@ -1,0 +1,110 @@
+// normalize.css
+
+//html, body, #root {
+//  height: 100%;
+//}
+//#root {
+//  overflow: auto;
+//}
+
+body {
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  background-color: #F3F4F5;
+  font-size: $font-size-base;
+  color: $text-color;
+}
+
+img {
+  border: 0;
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  color: $link-color;
+  background-color: transparent; // emove the gray background on active links in IE 10.
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    // color: $link-active-color;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  &:active {
+    color: $link-active-color;
+  }
+
+  &:active,
+  &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  &[disabled] {
+    color: $disabled-color;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea {
+  -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+}
+:-moz-placeholder {/* Firefox 18- */
+  color: #999;
+}
+::-moz-placeholder{/* Firefox 19+ */
+ color: #999;
+}
+:-ms-input-placeholder {
+  color: #999;
+}
+
+textarea, input {
+  border: 1px solid #DDD;
+  outline: none;
+}
+textarea:hover, textarea:focus {
+  border: 1px solid $orange-1;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+.icon {
+  fill: currentColor;
+}
+#bdshare_weixin_qrcode_dialog {
+  box-sizing: content-box;
+}

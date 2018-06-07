@@ -1,0 +1,179 @@
+.image-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: scroll;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.image-modal-content {
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 780px;
+  height: 600px;
+  background: #000;
+}
+
+.image-modal-content.image-modal-content-no-list {
+  height: 500px;
+}
+
+.image-modal-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  font-size: 24px;
+  z-index: 1002;
+}
+
+.image-modal-imgbox {
+  height: 500px;
+  position: relative;
+  display: table;
+  .image-modal-imgbox-inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 500px;
+    width: 780px;
+    position: relative;
+    img {
+      max-height: 100%;
+    }
+
+  }
+  .image-modal-imgbox-enlarged {
+    overflow: hidden;
+    img {
+      position: absolute;
+    }
+    img:hover {
+      cursor: move;
+    }
+  }
+  .image-modal-imgbox-enlarged.image-modal-imgbox-width {
+    img {
+      max-width: none !important;
+      height: 100%;
+    }
+  }
+  .image-modal-imgbox-enlarged.image-modal-imgbox-height {
+    img {
+      max-height: none !important;
+      width: 100%;
+    }
+  }
+}
+
+.image-modal-imgbox-scroll {
+  height: 100%;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.image-modal-enlarge {
+  position: absolute;
+  right: 10px;
+  top: 460px;
+  background: rgba(51, 51, 51, 0.5);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  z-index: 5;
+  i {
+    font-size: 30px;
+    color: white;
+  }
+}
+
+.image-modal-slidebar {
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.image-modal-slidebar-item {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  vertical-align: top;
+  margin: 10px 0;
+  display: inline-block;
+  background: #000;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.image-modal-slidebar-item + .image-modal-slidebar-item {
+  margin-right: 10px;
+}
+
+.image-modal-slidebar-item:first-child {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.image-modal-slidebar-item-now {
+  border: 3px solid #FC5832;
+}
+
+.image-modal-slidebar-item-unchoosed {
+  border: 1px solid #E8E8E8;
+  div {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: -1;
+    left: -1;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  div:hover {
+    background: rgba(0,0,0,0);
+  }
+}
+
+.operation-left-btn,
+.operation-right-btn {
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 50px;
+  z-index: 2;
+}
+
+.operation-left-btn {
+  background-image: url(./img/web_btn_l_n.png);
+  top: calc(50% - 25px);
+  left: 0;
+}
+
+.operation-right-btn {
+  background-image: url(./img/web_btn_r_n.png);
+  top: calc(50% - 25px);
+  right: 0;
+}
+
+.image-modal-imgbox-scroll:hover .xui-slider-operation {
+  z-index: 4;
+}
+
+.image-modal-imgbox-scroll:hover .operation-left-btn {
+  background-image: url(./img/web_btn_l_h.png);
+}
+
+.image-modal-imgbox-scroll:hover .operation-right-btn {
+  background-image: url(./img/web_btn_r_h.png);
+}
+
+

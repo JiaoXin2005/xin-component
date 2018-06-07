@@ -1,0 +1,34 @@
+.loading-circle-box {
+  margin: auto;
+  width: 60px;
+  line-height: 30px;
+  padding-bottom: 20px;
+}
+.loading-circle-item {
+  display: inline-block;
+  width: 33.3%;
+}
+
+@keyframes loading-circle-frame {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(0.5);
+  }
+  66% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.loading-circle-1 {
+  animation: loading-circle-frame 0.9s infinite linear;
+}
+.loading-circle-2 {
+  animation: loading-circle-frame 0.9s 0.3s infinite linear;
+}
+.loading-circle-3 {
+  animation: loading-circle-frame 0.9s 0.6s infinite linear;
+}

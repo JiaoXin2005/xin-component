@@ -1,0 +1,343 @@
+@import "../../styles/mixins/index.scss";
+
+/* s: svg 图标hover变色 */
+@include svg-hover('icon-quanjubofangqi-suoding', #e8e8e8);
+@include svg-hover('icon-quanjubofangqi-shangyiqu', #fff);
+@include svg-hover('icon-quanjubofangqi-xiayiqu', #fff);
+@include svg-hover('icon-quanjubofangqi-zanting', #fff);
+@include svg-hover('icon-quanjubofangqi-bofang', #fff);
+@include svg-hover('icon-quanjubofangqi-dianzan', #e8e8e8);
+@include svg-hover('icon-quanjubofangqi-xiazai', #e8e8e8);
+@include svg-hover('icon-quanjubofangqi-fenxiang', #e8e8e8);
+@include svg-hover('icon-quanjubofangqi-yinliang', #ccc);
+@include svg-hover('icon-quanjubofangqi-jingyin', #ccc);
+@include svg-hover('icon-quanjubofangqi-suiji', #ccc);
+@include svg-hover('icon-quanjubofangqi-xunhuan', #ccc);
+@include svg-hover('icon-quanjubofangqi-danquxunhuan', #ccc);
+@include svg-hover('icon-quanjubofangqi-bofangliebiao', #ccc);
+/* e: svg 图标hover变色 */
+
+$xmplayer-prefix-cls: "xm-player";
+.#{$xmplayer-prefix-cls} {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  height: 50px;
+  background: url("./img/play_bg.png") center repeat-x;
+  bottom: 0;
+  transition: all .2s;
+  user-select: none;
+  z-index: $zindex-player + 1;
+
+  /* s: 小锁 */
+  &-lock {
+    position: absolute;
+    right: 40px;
+    top: -14px;
+    width: 64px;
+    height: 14px;
+    background: url("./img/lock_bg.png") center no-repeat;
+    background-size: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+  /* s: 小锁 */
+  &.is-unlocked {
+    bottom: -50px;
+  }
+  &.is-locked {
+    bottom: 0px !important;
+  }
+
+  .hand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    top: -20px;
+  }
+
+  /* s: 设置阴影 */
+  .box-shadow-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -101px;
+      width: 100%;
+      height: 0;
+      box-shadow: 0 -2px 4px 1px rgba(0,0,0,0.20);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 42px;
+      height: 0;
+      box-shadow: 0 -2px 4px 1px rgba(0,0,0,0.20);
+    }
+  }
+  /* e: 设置阴影 */
+
+  /* s: 播放器--容器 */
+  &-wrapper {
+    width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  /* e：播放器--容器 */
+
+  /* s: 播放器--封面 */
+  &-cover {
+    width: 30px;
+    height: 30px;
+    background: url("./img/track_60.png") center no-repeat;
+    background-size: 100%;
+    margin-top: 10px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.50);
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  /* e: 播放器--封面 */
+
+  /* s: 播放器--播放、暂停、上下曲按钮 */
+  &-btns {
+    text-align: center;
+    margin-top: 10px;
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 20px;
+    }
+  }
+  /* e: 播放器--播放、暂停、上下曲按钮 */
+
+  /* s: 播放器--进度条等 */
+  &-body {
+    position: relative;
+    width: 660px;
+    margin-left: 20px;
+   &-title {
+      display: block;
+      height: 36px;
+      line-height: 36px;
+      font-size: 12px;
+      a {
+        color: #FFFFFF;
+        &:hover {
+          color: $orange-1;
+        }
+      }
+   }
+  }
+  &-progress {
+    &::after {
+      content: "";
+      height: 6px;
+      width: 100%;
+      top: -3px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    position: relative;
+    width: 540px;
+    height: 2px;
+    background: transparent linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,.95));
+    &_load {
+      height: 100%;
+      width: 0%;
+      background-color: #999;
+      display: block;
+    }
+    &_cur {
+      position: relative;
+      left: 0;
+      top: -2px;
+      display: block;
+      height: 100%;
+      width: 0%;
+      background-color: #F86442;
+    }
+    &_btn {
+      position: absolute;
+      right: -5px;
+      top: -4px;
+      font-size: 0;
+      cursor: pointer;
+    }
+  }
+  &-playtime {
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    font-size: 12px;
+    color: #e8e8e8;
+  }
+  /* e: 播放器--进度条等 */
+
+  /* s: 播放器--点赞等 */
+  &-oprations {
+    margin-top: 17px;
+    margin-left: 55px;
+    &::after {
+      content: '';
+      width: 1px;
+      height: 14px;
+      background-color: #666;
+      display: block;
+      float: right;
+      margin-top: 2px;
+    }
+    .btn {
+      margin-right: 18px;
+    }
+  }
+  &-controls {
+    position: relative;
+    margin-top: 17px;
+    .btn {
+      margin-left: 14px;
+    }
+  }
+  /* e: 播放器--点赞等 */
+
+  /* s: 播放器--音量调节 */
+  &-volume-wrapper {
+    position: absolute;
+    bottom:32px;
+    left: 0;
+    // z-index: 1;
+  }
+  &-volume {
+    @at-root .showVolume & {
+      display: block;
+    }
+    display: none;
+    width: 48px;
+    height: 122px;
+    background: url("./img/volume_bg.png") center no-repeat;
+    background-size: 100%;
+    &-progress {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      margin-left: -1px;
+      width: 2px;
+      height: 90px;
+      background: #000000;
+    }
+    &_cur {
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      display: block;
+      height: 0%;
+      width: 100%;
+      background-color: #F86442;
+    }
+    &_btn {
+      position: absolute;
+      right: -4px;
+      top: -4px;
+      font-size: 0;
+      cursor: pointer;
+    }
+  }
+  /* e: 播放器--音量调节 */
+
+  /* s: 播放器--列表 */
+  &-list {
+    position: fixed;
+    left: 50%;
+    bottom: 50px;
+    width: 1080px;
+    margin-left: -540px;
+    background: rgba(#000000, 0.85);
+    box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.20);
+    border-radius: 4px 4px 0 0;
+    z-index: $zindex-player;
+    &-head {
+      margin: 0 20px;
+      height: 55px;
+      line-height: 55px;
+      color: #fff;
+      border-bottom: 1px solid rgba(#999999, 0.2);
+      h4 {
+        font-weight: normal;
+        float: left;
+        font-size: 20px;
+        letter-spacing: 0;
+      }
+      .sort {
+        cursor: pointer;
+        float: right;
+        color: #999999;
+      }
+    }
+
+    &-wrapper_hide {
+      display: none;
+    }
+
+    &-content {
+      overflow: scroll;
+      height: 260px;
+      ul {
+        overflow: hidden;
+      }
+      .row {
+        cursor: pointer;
+        height: 42px;
+        line-height: 42px;
+        padding: 0 20px 0 45px;
+        transition: all .2s;
+        &:hover {
+          background: rgba(#000000, 0.5);
+        }
+        .col-1,.col-2,.col-3,.col-4, {
+          float: left;
+          color: #999999;
+        }
+        .col-1 {
+          display: inline-block;
+          text-align: center;
+          width: 34px;
+          .xui-playing {
+            margin-top: -14px;
+          }
+          svg {
+            vertical-align: middle
+          }
+        }
+        .col-2 {
+          width: 560px;
+          color: #FFFFFF;
+          margin-left: 5px;
+          &.is-playing {
+            color: #F86442;
+          }
+        }
+        .col-3 {
+          width: 300px;
+          @include ellipsis();
+        }
+        .col-4 {
+          float: right;
+        }
+      }
+    }
+  }
+  /* e: 播放器--列表 */
+
+}
+
+
+

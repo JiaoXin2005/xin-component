@@ -1,0 +1,68 @@
+@import '../../styles/mixins/index.scss';
+
+$select-prefix-cls: "#{$xui-prefix}-select";
+
+.#{$select-prefix-cls} {
+  @include reset-components;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: $gray-3;
+  width: 160px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+
+  /* input箭头 */
+  .arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 1px;
+  }
+  .arrow-bottom {
+    margin-top: -5px;
+  }
+  .arrow-top {
+    margin-top: -2px;
+  }
+
+  &-input {
+    width: 100%;
+    height: 100%;
+    // color: $gray-3;
+    padding: 0 22px 0 10px;
+    @include ellipsis();
+  }
+
+  &-options {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid $gray-e8;
+    border-radius: 4px;
+    max-height: 273px;
+    overflow: scroll;
+
+    &_item {
+      // padding: 0 22px 0 10px;
+      padding: 0 10px;
+      @include ellipsis();
+    }
+    &_item:hover {
+      transition: all .2s;
+      background: $gray-f345;
+    }
+
+    &_hide {
+      display: none;
+    }
+
+  }
+}

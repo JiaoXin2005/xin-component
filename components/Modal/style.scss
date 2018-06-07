@@ -1,0 +1,133 @@
+@import '../../styles/mixins/index.scss';
+
+$modal-prefix-cls: "#{$xui-prefix}-modal";
+
+.#{$modal-prefix-cls} {
+  @include reset-components;
+  position: absolute;
+  width: 590px;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 0;
+  border-top: 4px solid #FC9D77;
+  border-image: linear-gradient(to right, #F86442, #FC9D77) 2;
+
+  &-mask {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $zindex-modal;
+    background-color: rgba(0,0,0, 0.5);
+  }
+
+  &-wrap {
+    position: fixed;
+    overflow: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: $zindex-modal;
+    outline: 0;
+  }
+
+  &-closeBtn {
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 16px;
+    color: $gray-9;
+    &:hover {
+      color: $gray-3;
+    }
+  }
+
+  &-header {
+    font-size: 18px;
+    text-align: center;
+    color: $gray-3;
+    letter-spacing: 1.5px;
+    padding: 20px 0px;
+    font-weight: 600;
+  }
+
+  &-content {
+    position: relative;
+    border: 0;
+    background-clip: padding-box;
+    box-shadow: $shadow-2;
+  }
+
+  &-body {
+    // padding: 20px 0px;    
+  }
+
+  &-hidden {
+    display: none;
+  }
+}
+
+/* modal mask 淡入动画 */
+.fade-entered {
+  transition: all .2s ;
+  opacity: 1;  
+}
+.fade-entering {
+  transition: all .2s ;
+  opacity: 0;
+}
+.fade-exiting {
+  transition: all .2s ;  
+  opacity: 1;  
+}
+.fade-exited {
+  transition: all .2s ;  
+  opacity: 0;
+}
+
+/* modal 动画 */
+.modal-slide-entered{
+  // display: block;
+}
+
+.modal-slide-exited{
+  // display: none;
+}
+
+// 进入动画
+.modal-slide-entering{
+    animation: slideDownIn 0.2s both;
+}
+@keyframes slideDownIn{
+    from{
+        top: 60%;
+        opacity: 0;
+    }
+    to{
+        top: 50%;        
+        opacity: 1;
+    }
+}
+// 离开动画
+.modal-slide-exiting{
+    animation: slideDownOut 0.2s both;
+}
+@keyframes slideDownOut{
+    from{
+        top: 50%;        
+        opacity: 1;
+    }
+    to{
+        top: 60%;                
+        opacity: 0;
+    }
+}

@@ -1,0 +1,16 @@
+/**
+* svgHover 变色
+**/
+@mixin svg-hover($name, $preColor:#ccc, $hoverColor:#F86442) {
+  @at-root {
+    ##{$name} path{
+      fill: inherit;
+    }
+    .#{$name}{
+      fill: $preColor;
+    }
+    .#{$name}:hover {
+      fill: $hoverColor;
+    }
+  }
+}

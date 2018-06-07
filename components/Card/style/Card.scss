@@ -1,0 +1,73 @@
+@import '../../../styles/mixins/index.scss';
+
+$card-prefix-cls: "#{$xui-prefix}-card";
+
+.#{$card-prefix-cls} {
+  @include reset-components;
+  transition: all 0.2s;
+  background: #fff;
+
+  &-bordered {
+    border: 1px solid $gray-e8;
+  }
+
+  &-extra{
+    float: right;
+    &-title{
+      font-size: 14px;
+      color: $gray-6;
+      line-height: 22px;
+      &:hover{
+        color: $orange-1;
+      }
+    }
+  }
+
+  &-head {
+    margin:0 10px;
+    font-size: $font-size-lg;
+    border-bottom: 1px solid $gray-e8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0;
+    &-title {
+      font-size: $font-size-lg;
+      font-weight: normal;
+      padding: 12px 0 10.5px 0;
+    }
+  }
+
+  &-body {
+    overflow: hidden;
+    margin: 0 10px;
+    // .list-item {
+    //   margin: 10px 0;
+    //   overflow: hidden;
+    //   text-overflow: ellipsis;
+    //   white-space: nowrap;
+    //   &:first-child {
+    //     // margin-top: 10px;
+    //   }
+    //   &:last-child {
+    //     // margin-bottom: 10px;
+    //   }
+    // }
+    // .list-item a{
+    //   display: inline-block;
+    //   color: $gray-6;
+    //   &:hover{
+    //     color: $orange-1;
+    //     .xuicon-web_ic_play_s_h {
+    //       color: $orange-1;
+    //     }
+    //   }
+    // }
+  }
+  .xuicon {
+    margin-right: 5px;
+    transition: color 0.2s;
+    &.xuicon-web_ic_play_s_h {
+      color: rgba(51,51,51,0.2)
+    }
+  }
+}

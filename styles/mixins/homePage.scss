@@ -1,0 +1,43 @@
+// 标题左边一个色块
+@mixin title-colored-gutter-sm ($color: $orange-1) {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.4;
+  color: #333333;
+  letter-spacing: 0;
+  padding-left: 10px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 5px;
+    height: 15px;
+    left: 0;
+    top: 7px;
+    border-radius: 6px;
+    background-color: $color;
+  }
+}
+
+@mixin title-colored-gutter-lg ($color: $orange-1) {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.4;
+  color: #333333;
+  letter-spacing: 0;
+  position: relative;
+  padding-left: 16px;
+  display: inline-block;
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 5px;
+    height: 15px;
+    left: 0;
+    top: 6px;
+    border-radius: 6px;
+    background-color: $color;
+  }
+}

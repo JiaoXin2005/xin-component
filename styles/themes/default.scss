@@ -1,0 +1,71 @@
+@import '../color/colors.scss'; // 颜色常量
+
+// all components use the prefix namespace
+$xui-prefix: 'xui';
+
+// base css style for most components
+$font-family: -apple-system, BlinkMacSystemFont, 'PingFangSC-Regular', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-size-sm: 12px;
+$font-size-base: 14px;
+$font-size-lg: 16px;
+$border-radius-base: 5px;
+$text-color: #333;
+
+// Link style 
+$link-color: $gray-3;
+$link-hover-color: $orange-1;
+$link-active-color: $orange-1;
+
+// Shodow
+$shadow-color           : rgba(0, 0, 0, .15);
+$shadow-1-down          : 0 2px 8px $shadow-color;
+$shadow-1-up            : 0 2px 8px $shadow-color;
+$shadow-1-left          : -2px 0 8px $shadow-color;
+$shadow-1-right         : 2px 0 8px $shadow-color;
+$shadow-2               : 0 4px 12px $shadow-color;
+$box-shadow-base        : $shadow-1-down;
+
+// z-index
+$zindex-player: 900; // 全局播放器的z-index
+$zindex-header: 10;
+$zindex-modal: 1000;
+$zindex-popover: 1030;
+$zindex-tooltip: 1060;
+$zindex-toast: 1080;
+
+// Animation
+$animation-duration-slow: .3s; // Modal
+$animation-duration-base: .2s;
+$animation-duration-fast: .1s; // Tooltip
+// cubic-bezier
+$ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-out         : cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-out-back       : cubic-bezier(0.12, 0.4, 0.29, 1.46);
+$ease-in-back        : cubic-bezier(0.71, -0.46, 0.88, 0.6);
+$ease-in-out-back    : cubic-bezier(0.71, -0.46, 0.29, 1.46);
+$ease-out-circ       : cubic-bezier(0.08, 0.82, 0.17, 1);
+$ease-in-circ        : cubic-bezier(0.6, 0.04, 0.98, 0.34);
+$ease-in-out-circ    : cubic-bezier(0.78, 0.14, 0.15, 0.86);
+$ease-out-quint      : cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
+
+// Tootip  默认变量
+$tooltip-max-width: 250px;
+$tooltip-color: #fff;
+$tooltip-bg: rgba(0, 0, 0, .75);
+$tooltip-arrow-width: 5px;
+$tooltip-distance: $tooltip-arrow-width - 1px + 4px;
+$tooltip-arrow-color: $tooltip-bg;
+
+
+// Popover 默认变量
+$popover-bg: rgba(255, 255, 255, 0.95);
+$popover-color: $text-color;
+$popover-min-width: 177px;
+$popover-arrow-width: 5px;
+$popover-arrow-color: $popover-bg;
+$popover-arrow-outer-color: $popover-bg;
+$popover-distance: $popover-arrow-width + 4px;
+

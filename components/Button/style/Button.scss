@@ -1,0 +1,72 @@
+@import '../../../styles/mixins/index.scss';
+@import './mixin.scss';
+
+$btn-prefix-cls: "#{$xui-prefix}-btn";
+
+.#{$btn-prefix-cls} {
+    @include btn();
+    @include btn-default;
+
+    &-primary {
+        @include btn-primary;
+    }
+
+    &-gradient {
+        @include btn-gradient;
+        &:hover {
+            background: #F97B5E;
+        }
+    }
+
+  &.disabled,
+  &[disabled] {
+    background-color: #ccc;
+    border-color: #ccc;
+    background-image: none;
+    cursor: not-allowed;
+    > * {
+      pointer-events: none;
+    }
+  }
+
+    &>.xuicon{
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        vertical-align: text-bottom;
+    }
+
+    &-clicked::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-image: radial-gradient(12px 18px, rgba(0,0,0, 0.2) 10px, rgba(0,0,0, 0) 10px);
+        background-position: 50%;
+        animation: buttonAnima .6s;
+        animation-fill-mode: forwards;
+        transform: scale(1);        
+    }
+}
+
+@keyframes buttonAnima {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+a.#{$btn-prefix-cls} {
+  line-height: 30px;
+  &-lg {
+    line-height: 32px;
+  }
+  &-sm {
+    line-height: 28px;
+  }
+}

@@ -1,0 +1,78 @@
+/* s: 声音详情页的封面旋转动画 */
+@keyframes soundPaying {
+  from {
+    transform: rotate(10deg);
+  }
+  to {
+    transform: rotate(370deg);
+  }
+}
+.jiaoxin {
+  animation: soundPaying;
+}
+/* e: 声音详情页的封面旋转动画 */
+
+/* loading 旋转动画 */
+@keyframes load-spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  animation: load-spinning 1.4s infinite linear;
+}
+
+
+/*
+  悬浮侧边栏动画效果
+ */
+
+@keyframes floatBarItemAniHover{
+  //0%{opacity:.5;transform:scale(.5);transform-origin:center right}
+  //100%{opacity:1;transform:scale(1);transform-origin:center right}
+}
+.float-bar-animation {
+  animation: antZoomBigIn 0.1s 0s ease-out forwards;
+  //transition: all 1s ease
+}
+.float-bar-test {
+  animation: antZoomBigOut 0.1s 0s ease-out forwards;
+}
+
+@keyframes antZoomBigIn {
+  0% {
+    opacity: 0;
+    transform: scale(.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes antZoomBigOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(.8);
+  }
+}
+/*
+  悬浮侧边栏未读消息呼吸效果
+ */
+@keyframes floatBarNewMessageBreath {
+  0% {opacity: 1;transform:scale(1);transform-origin:center}
+  18% {opacity: 1;transform:scale(1);transform-origin:center}
+  40% {opacity: 0;transform:scale(0);transform-origin:center}
+  50% {opacity: 0; transform:scale(0);transform-origin: center}
+  60% {opacity: 0;transform:scale(0);transform-origin:center}
+  82% {opacity: 1;transform: scale(1);transform-origin: center}
+  100% {opacity: 1;transform:scale(1);transform-origin:center}
+}
+.float-bar-dot-breath:after {
+  animation: floatBarNewMessageBreath 2.1s 1s ease-out 3 forwards;
+}

@@ -1,0 +1,6 @@
+// mixins -> themes + color + mixins
+@import './mixins/index.scss';
+// core -> core/(normalize + iconfont + common)
+@import './core/index.scss';
+@import './components/index.scss'; // css样式组件
+@import './keyframes/index.scss'; // 全局动画  (因为es-style会给keyframes的阶段加上作用域) 
