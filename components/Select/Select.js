@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Option from './Option'
-import './style.scss!'
+import './style.scss'
 
 const prefixCls = 'xui-select'
 
@@ -90,7 +90,6 @@ class Select extends Component {
         <ul className={optionsClass}>
           {children}
         </ul>
-        <es-style />
       </div>
     )
   }

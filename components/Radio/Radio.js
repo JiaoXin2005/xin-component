@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import './style.scss!'
+import './style.scss'
 
 class Radio extends Component {
 
@@ -63,7 +63,6 @@ class Radio extends Component {
           />
         </span>
         <span className='xui-radio_label'> {children || value}</span>
-        <es-style/>
       </label>
     )
   }

@@ -5,7 +5,7 @@ import { Transition, CSSTransition } from 'react-transition-group'
 import Animate from 'rc-animate'
 import classNames from 'classnames'
 import Portal from './Portal'
-import './style.scss!'
+import './style.scss'
 
 const prefixCls = 'xui-modal'
 const KEY_CODE = {
@@ -159,8 +159,6 @@ class Modal extends Component {
                onKeyDown={this.onKeyDown}>
             {this.getModalElement()}
           </div>
-
-          <es-style/>
         </div>
       </Portal>
     )

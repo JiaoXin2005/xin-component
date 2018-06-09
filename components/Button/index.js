@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import './style/Button.scss!'
+import './style/Button.scss'
 
 /**
  * 按钮组件
@@ -56,8 +56,7 @@ export default class Button extends Component {
     return (
       <ComponentProp {...other} className={classes} onClick={this.handleClick}>
         {iconNode}
-        {children}
-        <es-style />        
+        {children} 
       </ComponentProp>
     )
   }
@@ -73,4 +72,6 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
+  type: 'primary',
+  size: 'default'
 }

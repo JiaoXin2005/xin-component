@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Link } from 'award/router'
 
-import './style/Card.scss!'
+import './style/Card.scss'
 
 /**
  * 卡片组件
@@ -68,7 +68,6 @@ class Card extends Component {
       <div {...divProps} className={classString}>
         { head }
         { body }
-        <es-style />
       </div>
     )
   }
